@@ -1,14 +1,13 @@
 project:
   name: document_manager_api
 
-
 spring:
   servlet:
     multipart:
       max-file-size: 100MB
       max-request-size: 1000MB
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
   application:
     name: document_manager_api
   datasource:
@@ -29,7 +28,10 @@ spring:
           type: com.alibaba.druid.pool.DruidDataSource
   autoconfigure:
     exclude:  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure # 去除druid配置
-
+  thymeleaf:
+    prefix: classpath:/templates/views/
+    suffix: .html
+    cache: false
 
 mybatis-plus:
   configuration:
@@ -61,4 +63,5 @@ logging:
         hs:
           mapper: debug
   config: classpath:logback.xml
+
 
