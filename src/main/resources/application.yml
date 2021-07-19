@@ -49,7 +49,6 @@ server:
 logging:
   level:
     com:
-      cn:
-        hs:
-          mapper: debug
+      guihx:
+        mapper: debug
   config: classpath:logback.xml
