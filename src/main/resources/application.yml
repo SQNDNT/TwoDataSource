@@ -1,37 +1,27 @@
 project:
-  name: document_manager_api
+  name: questionnaire_investigation_api
 
 spring:
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 1000MB
-#  profiles:
-#    active: dev
   application:
-    name: document_manager_api
+    name: questionnaire_investigation_api
   datasource:
     dynamic:
-      primary: db1
+      primary: mysql8
       datasource:
-        db1:
-          url: jdbc:mysql://localhost:3306/bmw?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=true
+        mysql8:
+          url: jdbc:mysql://localhost:3306/questionnaire?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=true
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
           type: com.alibaba.druid.pool.DruidDataSource
-        db2:
-          url: jdbc:mysql://localhost:3306/bmw2?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=true
-          username: root
-          password: root
-          driver-class-name: com.mysql.cj.jdbc.Driver
+        sqlserver:
+          url: jdbc:sqlserver://119.97.224.22:1433
+          username: sa
+          password: 1qa4RF7uj!%_+9ol8IK
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
           type: com.alibaba.druid.pool.DruidDataSource
   autoconfigure:
     exclude:  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure # 去除druid配置
-  thymeleaf:
-    prefix: classpath:/templates/views/
-    suffix: .html
-    cache: false
 
 mybatis-plus:
   configuration:
@@ -63,5 +53,3 @@ logging:
         hs:
           mapper: debug
   config: classpath:logback.xml
-
-

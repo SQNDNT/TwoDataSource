@@ -15,10 +15,10 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/vip").setViewName("level1/level1.html");
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/**") //拦截所有请求
-                .excludePathPatterns("/index","/");  //排除部分请求
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new LoginInterceptor())
+//                .addPathPatterns("/**") //拦截所有请求
+//                .excludePathPatterns("/index","/");  //排除部分请求
+//    }
 }

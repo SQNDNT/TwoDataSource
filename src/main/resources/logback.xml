@@ -31,7 +31,7 @@
         <!-- 循环政策：基于时间创建日志文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
-            <fileNamePattern>error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>history/%d{yyyy-MM-dd}/error.log</fileNamePattern>
             <!-- 最大保存时间：360天-->
             <maxHistory>360</maxHistory>
         </rollingPolicy>
@@ -56,7 +56,7 @@
         <!-- 循环政策：基于时间创建日志文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
-            <fileNamePattern>info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>history/%d{yyyy-MM-dd}/info.log</fileNamePattern>
             <!-- 最大保存时间：360天-->
             <maxHistory>360</maxHistory>
         </rollingPolicy>
@@ -81,7 +81,7 @@
         <!-- 循环政策：基于时间创建日志文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
-            <fileNamePattern>debug.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>history/%d{yyyy-MM-dd}/debug.log</fileNamePattern>
             <!-- 最大保存时间：360天-->
             <maxHistory>360</maxHistory>
         </rollingPolicy>
@@ -106,7 +106,7 @@
         <!-- 循环政策：基于时间创建日志文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
-            <fileNamePattern>warn.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>history/%d{yyyy-MM-dd}/warn.log</fileNamePattern>
             <!-- 最大保存时间：360天-->
             <maxHistory>360</maxHistory>
         </rollingPolicy>
@@ -114,10 +114,10 @@
 
     <!-- 基于dubug处理日志：具体控制台或者文件对日志级别的处理还要看所在appender配置的filter，如果没有配置filter，则使用root配置 -->
     <root level="info">
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="ERROR-OUT" />
-        <appender-ref ref="INFO-OUT" />
-        <appender-ref ref="DEBUG-OUT" />
-        <appender-ref ref="WARN-OUT" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ERROR-OUT"/>
+        <appender-ref ref="INFO-OUT"/>
+        <appender-ref ref="DEBUG-OUT"/>
+        <appender-ref ref="WARN-OUT"/>
     </root>
 </configuration>
